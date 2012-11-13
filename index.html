@@ -15,8 +15,9 @@ body div {
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
+  margin:0;padding:0;
 }
-p {display:inline;cursor:pointer;}
+p {display:inline;cursor:pointer;position:relative;}
 p:hover {opacity:0.8;
 text-shadow:1px 1px 1px red;
 -webkit-transition:0.5s opacity ease;
@@ -25,7 +26,14 @@ text-shadow:1px 1px 1px red;
 -o-transition:0.5s opacity ease;
 transition:0.5s opacity ease;
 }
+img.background {position:absolute;width:100%;height:100%;top:0px;left:0px;opacity:0.05;z-index:-10;}
+#holder {width:100%;height:100%;margin:0;padding:0;overflow:hidden;}
 </style>
+
+
+<img class="background" src="img/metal_texture.jpg">
+
+<div id="holder"></div>
 
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -44,13 +52,14 @@ $(document).ready(function(){
 	var divWidth = 100/colNum;
 	var divHeight = 100/rangeNum;
 
+	var base = $('#holder');
 
 	for (var i = 0; i <= Num-1; i++) {
 
 	//var div = '<div style="width:'+divWidth+'%;position:absolute;left:'+divWidth*i+'px;top:'+(100/rangeNum*divHeight)*(divHeight*i)+';z-index:'+i+';height:'+divHeight+'%;"></div>'; //to 9999
 
-		var div = '<div style="width:'+divWidth+'%;height:'+divHeight+'%;"></div>';
-		$('body').append(div);
+		var div = '<div style="width:'+divWidth+0.01+'%;height:'+divHeight+0.01+'%;"></div>';
+		base.append(div);
 	};
 
 	var divZ = $('div');
