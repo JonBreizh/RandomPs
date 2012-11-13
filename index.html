@@ -17,7 +17,7 @@ body div {
   -o-box-sizing: border-box;
   margin:0;padding:0;
 }
-p {display:inline;cursor:pointer;position:relative;}
+p {display:inline;cursor:pointer;}
 p:hover {opacity:0.8;
 text-shadow:1px 1px 1px red;
 -webkit-transition:0.5s opacity ease;
@@ -27,7 +27,7 @@ text-shadow:1px 1px 1px red;
 transition:0.5s opacity ease;
 }
 img.background {position:absolute;width:100%;height:100%;top:0px;left:0px;opacity:0.05;z-index:-10;}
-#holder {width:100%;height:100%;margin:0;padding:0;overflow:hidden;}
+#holder {width:103%;height:106%;margin:0;padding:0;overflow:hidden;margin-left:0.5%;}
 </style>
 
 
@@ -58,7 +58,7 @@ $(document).ready(function(){
 
 	//var div = '<div style="width:'+divWidth+'%;position:absolute;left:'+divWidth*i+'px;top:'+(100/rangeNum*divHeight)*(divHeight*i)+';z-index:'+i+';height:'+divHeight+'%;"></div>'; //to 9999
 
-		var div = '<div style="width:'+divWidth+0.01+'%;height:'+divHeight+0.01+'%;"></div>';
+		var div = '<div style="width:'+divWidth+'%;height:'+divHeight+'%;"></div>';
 		base.append(div);
 	};
 
